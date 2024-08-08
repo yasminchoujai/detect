@@ -5,7 +5,7 @@
       <div class="login-content">
         <div class="login-form">
           <p class="signin-text">
-            Don't have an account? <router-link to="/signup">Sign Up!</router-link>
+            Don't have an account ? <router-link to="/signup">Sign Up!</router-link>
           </p>
           <h1>Welcome to Facialytics</h1>
           <p class="description">
