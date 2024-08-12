@@ -17,10 +17,11 @@
           <p></p>
         </div>
         <div class="intro-button">
-          <a href="#features" class="get-started">
+          <!-- Replace <a> with <router-link> -->
+          <router-link to="/signup" class="get-started">
             Get Started
             <img src="../assets/arrow.png" class="arrow" />
-          </a>
+          </router-link>
         </div>
       </div>
     </div>

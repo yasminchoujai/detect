@@ -1,16 +1,18 @@
 <template>
   <div class="login-page">
     <div class="login-container">
-      <router-link to="/" class="back-button"> <i class="fa fa-arrow-left"></i> </router-link>
+      <router-link to="/" class="back-button">
+        <i class="fa fa-arrow-left"></i>
+      </router-link>
       <h1>Sign In</h1>
       <p class="subtitle">Welcome back! Please enter your details.</p>
 
       <div class="social-login">
         <button class="social-button google">
-          <i class="fab fa-google"></i> Sign in with Google
+          <i class="fab fa-google social-icon"></i>Sign in with Google
         </button>
         <button class="social-button facebook">
-          <i class="fab fa-facebook-f"></i> Sign in with Facebook
+          <i class="fab fa-facebook-f social-icon"></i> Sign in with Facebook
         </button>
       </div>
 
@@ -19,14 +21,14 @@
       <form @submit.prevent="login" class="login-form">
         <div class="input-group">
           <div class="input-container">
-            <i class="fa fa-envelope"></i>
+            <i class="fa fa-envelope input-icon"></i>
             <input type="email" v-model="email" placeholder="Email" />
           </div>
         </div>
 
         <div class="input-group">
           <div class="input-container">
-            <i class="fa fa-lock"></i>
+            <i class="fa fa-lock input-icon"></i>
             <input type="password" v-model="password" placeholder="Password" />
           </div>
         </div>
@@ -44,7 +46,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'LoginPage',
@@ -63,6 +64,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 .login-page {
   display: flex;
@@ -76,12 +78,10 @@ export default {
 .login-container {
   position: relative;
   text-align: center;
-  background: #fff;
   padding: 30px;
-  max-width: 400px;
+  max-width: 350px;
   width: 90%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  height: 80%;
 }
 
 .back-button {
@@ -126,7 +126,7 @@ h1 {
 
 .social-button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   font-size: 14px;
   border: 1px solid #ddd;
@@ -137,10 +137,6 @@ h1 {
   justify-content: center;
   border-radius: 25px;
   color: #333;
-}
-
-.social-button i {
-  margin-right: 10px;
 }
 
 .social-button.google {
@@ -155,6 +151,11 @@ h1 {
 
 .social-button:hover {
   background-color: #e9ecef;
+}
+
+.social-icon {
+  margin-right: 10px;
+  font-size: 18px;
 }
 
 .separator {
@@ -191,12 +192,13 @@ h1 {
   position: relative;
 }
 
-.input-container i {
+.input-icon {
   position: absolute;
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
   color: #ccc;
+  font-size: 18px;
 }
 
 input {
@@ -206,6 +208,7 @@ input {
   font-size: 14px;
   border-radius: 25px;
   box-sizing: border-box;
+  height: 45px; /* Ensure consistent input height */
 }
 
 .forgot-password {
@@ -228,6 +231,7 @@ input {
   transition: background-color 0.3s;
   border: none;
   border-radius: 25px;
+  height: 45px; /* Ensure consistent button height */
 }
 
 .login-button:hover {

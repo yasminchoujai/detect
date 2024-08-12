@@ -1,216 +1,259 @@
 <template>
-  <div class="content">
-    <div class="login-container">
-      <router-link to="/" class="back-to-home-button">Back to Home</router-link>
-      <div class="login-content">
-        <div class="login-form">
-          <p class="signin-text">
-            Don't have an account ? <router-link to="/signup">Sign Up!</router-link>
-          </p>
-          <h1>Welcome to Facialytics</h1>
-          <p class="description">
-            Blandit libero volutpat sed cras ornare arcu dui. Accumsan in nisl nisi scelerisque eu.
-          </p>
-          <form>
-            <div class="input-group">
-              <label for="email">E-mail</label>
-              <div class="input-container">
-                <i class="fa fa-envelope"></i>
-                <input type="email" id="email" name="email" placeholder="example@mail.com" />
-              </div>
-            </div>
+  <div class="signup-page">
+    <div class="signup-container">
+      <router-link to="/" class="back-button">
+        <i class="fa fa-arrow-left icon"></i>
+      </router-link>
+      <h1>Sign Up</h1>
+      <p class="subtitle">Create an account to get started.</p>
 
-            <div class="input-group">
-              <label for="password">Password</label>
-              <div class="input-container">
-                <i class="fa fa-lock"></i>
-                <input type="password" id="password" name="password" placeholder="Password" />
-              </div>
-            </div>
+      <div class="social-signup">
+        <button class="social-button google">
+          <i class="fab fa-google social-icon"></i> Sign up with Google
+        </button>
+        <button class="social-button facebook">
+          <i class="fab fa-facebook-f social-icon"></i> Sign up with Facebook
+        </button>
+      </div>
 
-            <button type="submit" class="submit-button">Create an account</button>
-          </form>
+      <div class="separator">or Sign up with Email</div>
 
-          <p class="or-text">Or sign in with</p>
-          <div class="social-icons">
-            <button class="social-button google"><i class="fab fa-google"></i></button>
-            <button class="social-button facebook"><i class="fab fa-facebook"></i></button>
-            <button class="social-button apple"><i class="fab fa-apple"></i></button>
+      <form @submit.prevent="signUp" class="signup-form">
+        <div class="input-group">
+          <div class="input-container">
+            <i class="fa fa-user input-icon"></i>
+            <input type="text" v-model="name" placeholder="Full Name" />
           </div>
         </div>
-        <div class="login-image"></div>
-      </div>
+
+        <div class="input-group">
+          <div class="input-container">
+            <i class="fa fa-envelope input-icon"></i>
+            <input type="email" v-model="email" placeholder="Email" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="input-container">
+            <i class="fa fa-lock input-icon"></i>
+            <input type="password" v-model="password" placeholder="Password" />
+          </div>
+        </div>
+
+        <button type="submit" class="signup-button">Sign Up</button>
+      </form>
+      <p class="sign-in-link">
+        Already have an account? <router-link to="/signin">Sign In</router-link>
+      </p>
+      <p class="footer-text">©2024 Facialytics All Rights Reserved.</p>
     </div>
   </div>
 </template>
 
 <script>
-import '@fortawesome/fontawesome-free/css/all.min.css'
-
 export default {
-  name: 'Login'
+  name: 'SignUpPage',
+  data() {
+    return {
+      name: '',
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    signUp() {
+      // Handle the sign-up logic here
+      console.log('Name:', this.name)
+      console.log('Email:', this.email)
+      console.log('Password:', this.password)
+    }
+  }
 }
 </script>
 
 <style scoped>
-.content {
-  background-color: #e6fbff;
-  color: #00175a;
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-}
-
-.login-container {
+.signup-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #f4f4f9;
+  font-family: 'Poppins', sans-serif;
 }
 
-.back-to-home-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #1993a8;
-  border-radius: 20px;
-  font-size: 14px;
+.signup-container {
+  position: relative;
   text-align: center;
-  z-index: 1; /* Ensure it appears above other content */
+  padding: 30px;
+  max-width: 350px;
+  width: 90%;
+  height: 80%;
 }
 
-.back-to-home-button:hover {
-  background-color: #135161;
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #319cb7;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 13px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.login-content {
-  display: flex;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 68%;
-  max-width: 800px;
-  background-color: aliceblue;
-  height: 600px;
+.back-button .icon {
+  margin: 0;
 }
 
-.login-form {
-  flex: 1;
-  padding: 40px;
-  background-color: white;
-  border-radius: 10px;
-}
-
-.signin-text {
-  text-align: right;
-  margin-bottom: 20px;
-  font-size: 14px;
-  float: left;
+.back-button:hover {
+  background-color: #abdee4;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-family: 'orbitron', sans-serif;
-  color: #1993a8;
+  color: #319cb7;
 }
 
-.description {
-  margin-bottom: 30px;
+.subtitle {
+  color: #000056;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.social-signup {
+  margin-bottom: 20px;
+}
+
+.social-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  color: #333;
+}
+
+.social-icon {
+  margin-right: 10px;
+}
+
+.social-button.google {
+  color: #4285f4;
+  background-color: #f8f9fa;
+}
+
+.social-button.facebook {
+  color: #3b5998;
+  background-color: #f8f9fa;
+}
+
+.social-button:hover {
+  background-color: #e9ecef;
+}
+
+.separator {
+  margin: 25px 0;
+  font-size: 14px;
+  color: #999;
+  position: relative;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: #ddd;
+  width: 40%;
+  position: absolute;
+  top: 50%;
+}
+
+.separator::before {
+  left: 0;
+}
+
+.separator::after {
+  right: 0;
 }
 
 .input-group {
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
 .input-container {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
-input[type='email'],
-input[type='password'] {
-  width: 100%;
-  padding: 12px 40px 12px 40px; /* Adjusted for icon on left */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-.input-container i {
+.input-icon {
   position: absolute;
-  left: 10px; /* Move icon to the left */
-  font-size: 18px;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
   color: #ccc;
 }
 
-.submit-button {
+input {
   width: 100%;
+  padding: 10px 12px 10px 40px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+.signup-button {
+  width: 150px;
   padding: 12px;
-  border: none;
-  background-color: #3b82f6;
+  background-color: #319cb7;
   color: white;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  background-color: #87c9bf;
   border: none;
-  color: white;
-  font-size: 15px;
-  border-radius: 20px;
+  border-radius: 25px;
 }
 
-.submit-button:hover {
+.signup-button:hover {
   background-color: #abdee4;
-  color: #135161;
+  color: #000056;
 }
 
-.or-text {
-  margin: 20px 0;
-  text-align: center;
-  color: #00175a;
+.footer-text {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #999;
 }
 
-.social-icons {
-  display: flex;
-  justify-content: space-evenly;
+input:focus {
+  border-color: #319cb7;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
-.social-button {
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background-color: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.sign-in-link {
+  margin-top: 20px;
+  font-size: 14px;
 }
 
-.social-button i {
-  font-size: 20px;
-  color: #000;
+.sign-in-link a {
+  color: #319cb7;
+  text-decoration: none;
 }
 
-.social-button:hover {
-  background-color: #abdee4;
-}
-
-.login-image {
-  flex: 1;
-  background: url('../assets/signin.jpg') no-repeat center center;
-  background-size: cover;
+.sign-in-link a:hover {
+  text-decoration: underline;
 }
 </style>
