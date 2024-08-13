@@ -10,6 +10,10 @@
           @load="handleLoad"
           @error="handleError"
         />
+         <div v-if="isLoading" class="spinner"></div>
+
+        <!-- Adjust the video feed source URL as needed -->
+        <img v-else :src="videoFeedUrl" alt="Emotion Detection Feed" @load="handleLoad" @error="handleError"/>
       </div>
       <div class="info-container">
         <h1>For <span class="highlight"> optimal experience </span>, Please make sure that:</h1>
