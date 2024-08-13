@@ -4,10 +4,7 @@
 
       <div class="video-container">
          <div v-if="isLoading" class="spinner"></div>
-<template>
-  <div>
-    <Header/>
-    <!-- other template code -->
+
         <!-- Adjust the video feed source URL as needed -->
         <img v-else :src="videoFeedUrl" alt="Emotion Detection Feed" @load="handleLoad" @error="handleError"/>
       </div>
