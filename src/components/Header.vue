@@ -4,7 +4,7 @@
       <div class="logodiv">
         <img src="../assets/logo.png" alt="Logo" class="imglogo" />
       </div>
-      <div class="logo">Facialytics</div>
+      <div class="logo">Dtect</div>
     </div>
     <nav class="nav">
       <ul>

@@ -42,7 +42,7 @@
       <p class="sign-up-link">
         Don't have an account? <router-link to="/signup">Sign Up</router-link>
       </p>
-      <p class="footer-text">©2024 Facialytics All Rights Reserved.</p>
+      <p class="footer-text">©2024 Dtect All Rights Reserved.</p>
     </div>
   </div>
 </template>

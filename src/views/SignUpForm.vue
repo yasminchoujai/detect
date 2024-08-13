@@ -45,7 +45,7 @@
       <p class="sign-in-link">
         Already have an account? <router-link to="/signin">Sign In</router-link>
       </p>
-      <p class="footer-text">©2024 Facialytics All Rights Reserved.</p>
+      <p class="footer-text">©2024 Dtect All Rights Reserved.</p>
     </div>
   </div>
 </template>
