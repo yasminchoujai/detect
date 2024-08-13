@@ -4,6 +4,7 @@ import Product from '@/views/Product.vue'
 import SignInForm from '@/views/SignInForm.vue'
 import SignUpForm from '@/views/SignUpForm.vue'
 import Contact from '@/views/Contact.vue'
+
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 

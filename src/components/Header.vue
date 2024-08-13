@@ -82,9 +82,8 @@ nav ul li {
 
 .nav-link {
   color: white;
-  font-family: Roboto;
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
   transition: 0.2s;
 }
 

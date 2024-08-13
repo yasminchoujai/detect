@@ -96,7 +96,7 @@ export default {
   background-color: #289bb6;
   color: #fff;
   border-radius: 50%;
-  border: #fff solid 1px;
+  border: none;
   width: 50px;
   height: 50px;
   display: flex;
@@ -108,6 +108,6 @@ export default {
   transition: background-color 0.3s;
 }
 .back-to-top:hover {
-  background-color: #eb57c2;
+  background-color: #87c9bf;
 }
 </style>

@@ -1,50 +1,56 @@
 <template>
   <footer class="footer-section">
     <div class="footer-content">
+      <div class="footer-subscribe">
+        <p>Join us on the journey to an effortless experience.</p>
+        <p>Stay updated with tips, tricks, and exclusive content.</p>
+        <div class="subscribe-form">
+          <input type="email" placeholder="Email Address" />
+          <button type="submit">Subscribe</button>
+        </div>
+        <p class="privacy-note">By signing up, you agree to our <a href="#">Privacy Policy</a>.</p>
+      </div>
       <div class="footer-links">
         <div class="footer-column">
-          <img src="../assets/logo.png" alt="logo" class="logo" />
-          <p>Email: <a href="mailto:hello@clause.com">hello@faceme.com</a></p>
-          <p>Phone: <a href="tel:+621987654321">+62 1987 654 321</a></p>
-        </div>
-        <div class="footer-column">
-          <h3>Solution</h3>
-          <ul>
-            <li><a href="#">Why Cequence</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">OpenAI</a></li>
-            <li><a href="#">Technology</a></li>
-            <li><a href="#">Security</a></li>
+          <h3>SOCIAL</h3>
+          <ul class="social-media">
+            <li>
+              <a href="#"
+                ><i class="fab fa-instagram"></i>
+                <div class="link">instagram</div></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fab fa-youtube"></i>
+                <div class="link">youtube</div></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fab fa-tiktok"></i>
+                <div class="link">tiktok</div></a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-column">
-          <h3>Customers</h3>
+          <h3>OFFICIAL</h3>
           <ul>
-            <li><a href="#">Procurement</a></li>
-            <li><a href="#">Sales</a></li>
-            <li><a href="#">Legal</a></li>
-            <li><a href="#">Medium</a></li>
-            <li><a href="#">Enterprise</a></li>
+            <li><router-link to="/product">Product</router-link></li>
+            <li><router-link to="/features">Features</router-link></li>
+            <li><router-link to="/about">About</router-link></li>
+            <li><router-link to="/contact">Contact</router-link></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h3>Resources</h3>
+          <h3>SUPPORT</h3>
           <ul>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Contact Sales</a></li>
-            <li><a href="#">Changelog</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="mailto:hello@faceme.com">Dtect@gmail.com</a></li>
+            <li><a href="#">Do Not Sell or Share My Personal Information</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+            <li><a href="#">&copy; 2024 Dtect. All rights reserved.</a></li>
           </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 FaceMe. All rights reserved.</p>
-        <div class="social-media">
-          <a href="#" class="social-icon"
-            ><img src="../assets/images__1_-removebg-preview.png" alt="Twitter"
-          /></a>
-          <a href="#" class="social-icon"><img src="../assets/linkedin.png" alt="LinkedIn" /></a>
-          <a href="#" class="social-icon"><img src="../assets/INSTAGRMA.png" alt="Instagram" /></a>
         </div>
       </div>
     </div>
@@ -61,46 +67,89 @@ export default {
 .footer-section {
   background-color: #289bb6;
   color: white;
-  text-align: left;
-  width: 100%;
-  margin: 10px 0;
-  padding-bottom: 40px;
-  padding-top: 40px;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  width: 100vw;
 }
 
 .footer-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-subscribe {
+  max-width: 400px;
+  margin-right: 20px;
+}
+
+.footer-subscribe p {
+  margin: 10px 0;
+}
+
+.subscribe-form {
+  display: flex;
+  margin: 10px 0;
+}
+
+.subscribe-form input {
+  padding: 10px 15px;
+  flex: 1;
+  border: 1px solid transparent;
+  border-radius: 25px 0 0 25px;
+  background-color: aliceblue;
+  color: #333;
+  font-size: 14px;
+  outline: none;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.subscribe-form input::placeholder {
+  color: #597379;
+}
+
+.subscribe-form input:focus {
+  background-color: white;
+  border-color: #289bb6;
+}
+
+.subscribe-form button {
+  border: none;
+  background-color: aliceblue;
+  padding: 10px 15px;
+  color: #289bb6;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.subscribe-form button:hover {
+  background-color: #289bb6;
+  color: white;
+  border: rgba(255, 255, 255, 0.662) solid 1px;
 }
 
 .footer-links {
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
 .footer-column {
   flex: 1;
-  min-width: 200px;
-  margin: 10px;
-}
-
-.logo {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 20px;
+  min-width: 150px;
+  margin-right: 30px;
 }
 
 .footer-column h3 {
   margin-bottom: 10px;
-  font-size: 18px;
-  font-family: 'orbitron', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .footer-column ul {
@@ -115,6 +164,7 @@ export default {
 .footer-column a {
   color: white;
   text-decoration: none;
+  font-size: 14px;
   transition: color 0.3s;
 }
 
@@ -122,86 +172,66 @@ export default {
   color: #d1faff;
 }
 
+.social-media i {
+  margin-right: 20px;
+}
+
+.social-media a {
+  display: flex;
+  align-items: center;
+}
+
+.social-media a:hover i {
+  color: #d1faff;
+}
+
+.privacy-note a {
+  color: #d1faff;
+  text-decoration: underline;
+}
+
+.privacy-note a:hover {
+  color: white;
+}
+
 .footer-bottom {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  border-top: 1px solid white;
-  margin-top: 20px;
+  padding-top: 10px;
   flex-wrap: wrap;
-  text-align: center;
 }
 
-.social-media {
-  display: flex;
-  justify-content: center;
+.country-region p {
+  margin: 0;
+  font-size: 14px;
 }
 
-.social-icon {
-  margin: 0 10px;
-}
-
-.social-icon img {
-  width: 20px;
-  height: 20px;
+.afterpay-logo img {
+  height: 30px;
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 1024px) {
-  .footer-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .social-media {
-    margin-top: 10px;
-  }
-}
-
 @media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
   .footer-column {
-    margin: 5px 0;
+    margin-bottom: 20px;
   }
 
   .footer-bottom {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .social-icon img {
-    width: 18px;
-    height: 18px;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .footer-links {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-column {
-    min-width: 100%;
-    margin: 10px 0;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .social-icon img {
-    width: 16px;
-    height: 16px;
-  }
+.social-media i {
+  margin-right: 20px;
+}
+.link {
+  margin-left: 10px;
 }
 </style>

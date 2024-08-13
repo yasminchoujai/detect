@@ -197,7 +197,7 @@ h1 {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #ccc;
+  color: #319cb7;
   font-size: 18px;
 }
 
@@ -208,7 +208,7 @@ input {
   font-size: 14px;
   border-radius: 25px;
   box-sizing: border-box;
-  height: 45px; /* Ensure consistent input height */
+  height: 45px;
 }
 
 .forgot-password {

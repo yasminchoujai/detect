@@ -202,7 +202,7 @@ h1 {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #ccc;
+  color: #319cb7;
 }
 
 input {

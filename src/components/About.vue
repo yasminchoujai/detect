@@ -10,8 +10,11 @@
       </p>
     </div>
     <div class="features-content">
-      <div class="features-images">
-        <img src="../assets/AIGIRL2.png" alt="Project Image 1" class="animated-image image-1" />
+      <div class="features-video">
+        <video autoplay loop muted playsinline class="animated-video video-1">
+          <source src="../assets/aboutvid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div class="features-text">
         <h2 class="animated-text title">About the project</h2>
@@ -52,7 +55,7 @@ export default {
 
     const observer = new IntersectionObserver(callback, options)
 
-    document.querySelectorAll('.animated-text, .animated-image').forEach((el) => {
+    document.querySelectorAll('.animated-text, .animated-video').forEach((el) => {
       observer.observe(el)
     })
   }
@@ -101,31 +104,30 @@ export default {
   margin-bottom: 20px;
 }
 
-/* Animation for the image */
-
-.animated-image {
-  width: 80%;
+/* Animation for the video */
+.animated-video {
+  width: 100%;
   height: auto;
   opacity: 0;
   transform: translateY(20px);
   transition:
     opacity 2s ease-out,
     transform 2s ease-out;
-  margin-top: 50px;
+  margin-top: 120px;
   margin-bottom: 50px;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.animated-image.in-view {
+.animated-video.in-view {
   opacity: 1;
   transform: translateY(0);
 }
 
-.animated-image.image-1 {
+.animated-video.video-1 {
   animation: floatAnimation 4s ease-in-out infinite;
 }
 
-.a
 /* Animation for the text */
 @keyframes fadeInUp {
   from {
@@ -159,27 +161,16 @@ export default {
   flex-direction: row;
 }
 
-.features-images {
+.features-video {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
-  background-color: #abdee4;
-  flex: 1;
-  margin-left: 40px;
-  color: #00175a;
-  background-color: aliceblue;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(30px);
+  margin-right: 40px;
 }
 
 .features-text {
   flex: 1;
-  margin-left: 40px;
   color: #00175a;
   background-color: aliceblue;
   padding: 20px;

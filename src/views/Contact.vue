@@ -120,18 +120,26 @@ export default {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #ccc;
+  color: #319cb7;
   font-size: 16px;
 }
 
 input {
   width: 100%;
   padding: 10px 12px 10px 35px;
-  border: 1px solid #ccc;
+  border: none;
+  border-bottom: 1px solid #cccccca0;
   font-size: 14px;
-  border-radius: 25px;
+  border-radius: 0;
   box-sizing: border-box;
   height: 45px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #319cb7;
+  outline: none;
+  box-shadow: none;
 }
 
 .employee-selection {
@@ -151,7 +159,7 @@ input {
 }
 
 .employee-button:hover {
-  background-color: #e9ecef;
+  background-color: #cfddea;
 }
 
 .submit-button {
@@ -169,7 +177,7 @@ input {
 }
 
 .submit-button:hover {
-  background-color: #abdee4;
+  background-color: #d2fbff;
   color: #000056;
 }
 
@@ -188,21 +196,6 @@ input {
   border-radius: 0 20px 20px 0;
 }
 
-.image-overlay {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 80%;
-}
-input:focus {
-  border-color: #319cb7; /* Blue border color */
-  outline: none; /* Remove the default outline */
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); /* Optional: Add a subtle blue shadow */
-}
 .back-button {
   position: absolute;
   top: 15px;
