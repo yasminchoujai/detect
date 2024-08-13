@@ -11,7 +11,7 @@ export default {
 
 <template>
   <div>
-    <Header />
+    <Header/>
     <!-- other template code -->
   </div>
 </template>
